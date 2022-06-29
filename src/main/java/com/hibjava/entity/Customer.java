@@ -1,10 +1,13 @@
 package com.hibjava.entity;
 import java.util.Date;
 
-import jakarta.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table; 
 
-//@Entity                        //these annotations were 
-//@Table(name = "customer") 	//causing error in XML case with bean .  Just good old plain classes will work!! No decorators required.  	
+@Entity                        
+@Table(name = "customer") 		
 public class Customer { 
 	@Id
 	private Integer cId;
