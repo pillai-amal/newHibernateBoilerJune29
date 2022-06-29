@@ -1,11 +1,10 @@
 package hibe_boiler.hibe_boiler.entity;
 import java.time.LocalDate; 
-
 import jakarta.persistence.*;
-public class Customer {
-	@Entity
-	@Table(name = "customer")
-	public class CustomerEntity {
+
+@Entity
+@Table(name = "customer") 
+public class Customer { 
 		@Id
 		private Integer customerId;
 		private String customerName;
@@ -13,8 +12,10 @@ public class Customer {
 		private String address;
 		@Column(name = "phoneNumber")
 		private Long contactNumber;
+		
 	  //getters & setters
-        public void setCustomerId(Integer customerId) {
+        
+		public void setCustomerId(Integer customerId) {
             this.customerId = customerId;
         }
 
@@ -29,5 +30,5 @@ public class Customer {
         public void setAddress(String address) {
             this.address = address; 
         }
-	}
+
 }
