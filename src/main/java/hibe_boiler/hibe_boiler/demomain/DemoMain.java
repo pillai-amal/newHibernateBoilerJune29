@@ -1,6 +1,6 @@
 package hibe_boiler.hibe_boiler.demomain;
 
-import java.util.Date;
+import java.util.Date;  
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,8 +10,8 @@ import hibe_boiler.hibe_boiler.service.CustomerServiceImpl;
 
 public class DemoMain {
 	public static void main(String[] args) {
-		DemoMain d=new DemoMain();
-		//	d.add();
+		DemoMain d = new DemoMain();
+			d.add();
 		//	d.get();
 		//	d.update();
 		//	d.delete();
@@ -22,8 +22,8 @@ public class DemoMain {
 
 void get() {
 		try {
-			ApplicationContext c=new ClassPathXmlApplicationContext("SpringConfig.xml");
-			CustomerServiceImpl customerService=c.getBean("serv",CustomerServiceImpl.class);
+			ApplicationContext c = new ClassPathXmlApplicationContext("SpringConfig.xml");
+			CustomerServiceImpl customerService = c.getBean("serv",CustomerServiceImpl.class);
 			Customer c1=customerService.getCustomer(103);
 			System.out.println(c1);
 			} catch (Exception e) {
@@ -70,7 +70,7 @@ void delete() {
 
 void showAll()  {
 	try {
-		ApplicationContext c=new ClassPathXmlApplicationContext("SpringConfig.xml");
+		ApplicationContext c = new ClassPathXmlApplicationContext("SpringConfig.xml");
 		CustomerServiceImpl customerService=c.getBean("serv",CustomerServiceImpl.class);
 		System.out.println(customerService.getAllCustomer());
 		} catch (Exception e) {

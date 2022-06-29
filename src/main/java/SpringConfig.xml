@@ -4,7 +4,7 @@
 	<bean id="dateFormat" class="java.text.SimpleDateFormat">
 		<constructor-arg value="yyyy-MM-dd" />
 	</bean>
-	<bean id="s1" class="com.infy.entity.Customer">
+	<bean id="sl" class="hibe_boiler.hibe_boiler.entity.Customer">
 		<property name="cId" value="103"></property>
 		<property name="cName" value="Ridima"></property>
 		<property name="city" value="US"></property>
@@ -16,10 +16,10 @@
 		</property>
 	</bean>
 	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/customer_db"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="root"></property>
+		<property name="driverClassName" value="org.postgresql.Driver"></property>
+		<property name="url" value="jdbc:postgresql://localhost:5432/hibernatedb"></property>
+		<property name="username" value="postgres"></property>
+		<property name="password" value="pass"></property>
 	</bean>
 	<bean id="secfact" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
@@ -29,13 +29,13 @@
 			<props>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
 			</props>
 		</property>
 
 		<property name="annotatedClasses">
 			<list>
-				<value>com.infy.entity.Customer</value>
+				<value>hibe_boiler.hibe_boiler.entity.Customer</value>
 			</list>
 		</property>
 	</bean>
@@ -44,11 +44,11 @@
 		<property name="checkWriteOperations" value="false"></property>
 	</bean>
 
-	<bean id="daoimpl" class="com.infy.DAO.CustomerDAOImpl">
+	<bean id="daoimpl" class="hibe_boiler.hibe_boiler.DAO.CustomerDAOImpl">
 		<property name="hbtemp" ref="hibernatetemp"></property>
 	</bean>
 
-	<bean id="serv" class="com.infy.service.CustomerServiceImpl">
+	<bean id="serv" class="hibe_boiler.hibe_boiler.service.CustomerServiceImpl">
 		<property name="impl" ref="daoimpl"></property>
 	</bean>
 

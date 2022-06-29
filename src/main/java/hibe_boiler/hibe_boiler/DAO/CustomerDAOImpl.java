@@ -1,10 +1,10 @@
 package hibe_boiler.hibe_boiler.DAO;
 
-import java.util.List;
+import java.util.List; 
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import hibe_boiler.hibe_boiler.entity.Customer;
 import org.hibernate.Query;
