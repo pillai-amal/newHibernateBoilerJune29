@@ -1,34 +1,61 @@
 package hibe_boiler.hibe_boiler.entity;
-import java.time.LocalDate; 
+import java.util.Date;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "customer") 
 public class Customer { 
-		@Id
-		private Integer customerId;
-		private String customerName;
-		private LocalDate dateOfBirth;
-		private String address;
-		@Column(name = "phoneNumber")
-		private Long contactNumber;
+	@Id
+	private Integer cId;
+	
+	
+	@Column
+	private String cName;
+	@Column
+	private String city;
+	@Column
+	private Date dob;
+	
+	public Customer() {
 		
-	  //getters & setters
-        
-		public void setCustomerId(Integer customerId) {
-            this.customerId = customerId;
-        }
-
-        public void setCustomerName(String customerName) {
-            this.customerName = customerName;
-        }
-
-        public void setDateOfBirth(LocalDate dateOfBirth) {
-            this.dateOfBirth = dateOfBirth;
-        }
-
-        public void setAddress(String address) {
-            this.address = address; 
-        }
+	}
+	
+	public Customer(Integer cId, String cName, String city, Date dob) {
+		super();
+		this.cId = cId;
+		this.cName = cName;
+		this.city = city;
+		this.dob = dob;
+	}
+	public Integer getcId() {
+		return cId;
+	}
+	public void setcId(Integer cId) {
+		this.cId = cId;
+	}
+	public String getcName() {
+		return cName;
+	}
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+	@Override
+	public String toString() {return "Customer [cId=" + cId + ", cName=" + cName + ", city=" + city + ", dob=" + dob + "]";
+	}
+	
 
 }
+

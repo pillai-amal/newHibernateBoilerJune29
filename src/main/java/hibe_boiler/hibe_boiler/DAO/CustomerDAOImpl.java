@@ -1,34 +1,78 @@
 package hibe_boiler.hibe_boiler.DAO;
 
-import org.hibernate.*; 
-import org.springframework.beans.factory.annotation.Autowired; 
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import hibe_boiler.hibe_boiler.entity.Customer;
+import org.hibernate.Query;
+
 
 @Repository(value = "customerDao")
 public class CustomerDAOImpl implements CustomerDAO {
-	@Autowired
-	SessionFactory sessionFactory;
-	public Integer addCustomer(hibe_boiler.hibe_boiler.entity.Customer c) throws Exception {
-		Session session = sessionFactory.getCurrentSession();
-		Customer customer = new Customer();
-		customer.se
+	
+	HibernateTemplate hbtemp;
+	
+	public HibernateTemplate getHbtemp() {
+		return hbtemp;
+	}
+	public void setHbtemp(HibernateTemplate hbtemp) {
+		this.hbtemp = hbtemp;
+	}
+	public Integer addCustomer(Customer c) throws Exception {
+		
+		SessionFactory fact=hbtemp.getSessionFactory();
+		Session sec=fact.openSession();
+		sec.save(c);
+		sec.beginTransaction().commit();
+		
+		
 		return null;
 	}
 
-	public Integer updateCustomer(hibe_boiler.hibe_boiler.entity.Customer c) throws Exception {
-		// TODO Auto-generated method stub
+	public Integer UpdateCustomer(Customer c) throws Exception {
+		SessionFactory fact=hbtemp.getSessionFactory();
+		Session sec=fact.openSession();
+		
+		Customer cust=(Customer)sec.get(Customer.class, c.getcId());
+		
+		cust.setcName(c.getcName());
+		cust.setCity(c.getCity());
+		cust.setDob(c.getDob());
+		
+		sec.save(cust);
+		sec.beginTransaction().commit();
+		
+		return null;
+	}
+	
+public Integer deleteCustomer(Integer cid) throws Exception {
+		
+		SessionFactory fact=hbtemp.getSessionFactory();
+		Session sec=fact.openSession();
+		Customer cust=(Customer)sec.get(Customer.class, cid);
+		sec.delete(cust);
+		sec.beginTransaction().commit();
+		
+		
 		return null;
 	}
 
-	public Integer deleteCustomer(Integer cid) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public Customer getCustomer(Integer cid) throws Exception {
+		Session ses=hbtemp.getSessionFactory().openSession();
+		
+		Customer s1=(Customer)ses.get(Customer.class, cid);
+		
+		return s1;
 	}
-
-	public hibe_boiler.hibe_boiler.entity.Customer getCustomer(Integer cid) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public List<Customer> getAllCustomer() throws Exception {
+		Session ses=hbtemp.getSessionFactory().openSession();
+		Query q=ses.createQuery("from Customer");
+		return q.list(); 
+		
 	}
 
 }
