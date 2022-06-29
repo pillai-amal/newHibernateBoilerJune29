@@ -14,5 +14,20 @@ public class Customer {
 		@Column(name = "phoneNumber")
 		private Long contactNumber;
 	  //getters & setters
+        public void setCustomerId(Integer customerId) {
+            this.customerId = customerId;
+        }
+
+        public void setCustomerName(String customerName) {
+            this.customerName = customerName;
+        }
+
+        public void setDateOfBirth(LocalDate dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+        }
+
+        public void setAddress(String address) {
+            this.address = address; 
+        }
 	}
 }
