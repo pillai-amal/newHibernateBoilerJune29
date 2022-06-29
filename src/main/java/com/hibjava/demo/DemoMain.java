@@ -1,6 +1,6 @@
 package com.hibjava.demo;
 
-import java.util.Date;  
+import java.util.Date;   
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,11 +12,11 @@ public class DemoMain {
 	public static void main(String[] args) {
 		DemoMain d = new DemoMain();
 			d.add();
-		//	d.get();
-		//	d.update();
-		//	d.delete();
-		
-			d.showAll();
+//			d.get();
+//			d.update();
+//			d.delete();
+//		
+//			d.showAll();
 	}
 	
 
@@ -34,7 +34,7 @@ void get() {
 
 void add() {				
 		try {
-			ApplicationContext context=new ClassPathXmlApplicationContext("SpringConfig.xml");		
+			ApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");		
 			Customer c1=context.getBean("s1",Customer.class);		
 			CustomerServiceImpl impl=context.getBean("serv",CustomerServiceImpl.class);		
 			impl.addCustomer(c1);
@@ -44,7 +44,7 @@ void add() {
 }
 
 void update() {
-			ApplicationContext c=new ClassPathXmlApplicationContext("SpringConfig.xml");
+			ApplicationContext c = new ClassPathXmlApplicationContext("SpringConfig.xml");
 			CustomerServiceImpl customerService=c.getBean("serv",CustomerServiceImpl.class);
 			Date dt=new Date(1992, 8, 9);
 			Customer c1=new Customer(102,"Priyanka"	,"Delhi",dt);
@@ -60,7 +60,7 @@ void update() {
 
 void delete() {
 	try {
-		ApplicationContext c=new ClassPathXmlApplicationContext("SpringConfig.xml");
+		ApplicationContext c = new ClassPathXmlApplicationContext("SpringConfig.xml");
 		CustomerServiceImpl customerService=c.getBean("serv",CustomerServiceImpl.class);
 		customerService.deleteCustomer(101);
 	} catch (Exception e) {
@@ -71,7 +71,7 @@ void delete() {
 void showAll()  {
 	try {
 		ApplicationContext c = new ClassPathXmlApplicationContext("SpringConfig.xml");
-		CustomerServiceImpl customerService=c.getBean("serv",CustomerServiceImpl.class);
+		CustomerServiceImpl customerService = c.getBean("serv",CustomerServiceImpl.class);
 		System.out.println(customerService.getAllCustomer());
 		} catch (Exception e) {
 			e.printStackTrace();
