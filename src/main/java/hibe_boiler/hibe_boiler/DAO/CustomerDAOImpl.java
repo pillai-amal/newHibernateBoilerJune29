@@ -1,5 +1,6 @@
 package hibe_boiler.hibe_boiler.DAO;
-import org.hibernate.*;
+
+import org.hibernate.*; 
 import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.stereotype.Repository;
 import hibe_boiler.hibe_boiler.entity.Customer;
@@ -9,7 +10,9 @@ public class CustomerDAOImpl implements CustomerDAO {
 	@Autowired
 	SessionFactory sessionFactory;
 	public Integer addCustomer(hibe_boiler.hibe_boiler.entity.Customer c) throws Exception {
-		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		Customer customer = new Customer();
+		customer.se
 		return null;
 	}
 
