@@ -3,8 +3,8 @@ import java.util.Date;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "customer") 
+//@Entity                        //these annotations were 
+//@Table(name = "customer") 	//causing error in XML case with bean .  Just good old plain classes will work!! No decorators required.  	
 public class Customer { 
 	@Id
 	private Integer cId;
