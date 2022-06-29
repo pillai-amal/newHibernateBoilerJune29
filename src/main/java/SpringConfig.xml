@@ -4,7 +4,7 @@
 	<bean id="dateFormat" class="java.text.SimpleDateFormat">
 		<constructor-arg value="yyyy-MM-dd" />
 	</bean>
-	<bean id="sl" class="hibe_boiler.hibe_boiler.entity.Customer">
+	<bean id="s1" class="com.hibjava.entity.Customer">
 		<property name="cId" value="103"></property>
 		<property name="cName" value="Ridima"></property>
 		<property name="city" value="US"></property>
@@ -35,7 +35,7 @@
 
 		<property name="annotatedClasses">
 			<list>
-				<value>hibe_boiler.hibe_boiler.entity.Customer</value>
+				<value>com.hibjava.entity.Customer</value>
 			</list>
 		</property>
 	</bean>
@@ -44,11 +44,11 @@
 		<property name="checkWriteOperations" value="false"></property>
 	</bean>
 
-	<bean id="daoimpl" class="hibe_boiler.hibe_boiler.DAO.CustomerDAOImpl">
+	<bean id="daoimpl" class="com.hibjava.DAO.CustomerDAOImpl">
 		<property name="hbtemp" ref="hibernatetemp"></property>
 	</bean>
 
-	<bean id="serv" class="hibe_boiler.hibe_boiler.service.CustomerServiceImpl">
+	<bean id="serv" class="com.hibjava.service.CustomerServiceImpl">
 		<property name="impl" ref="daoimpl"></property>
 	</bean>
 

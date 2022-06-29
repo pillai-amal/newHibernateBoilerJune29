@@ -1,4 +1,4 @@
-package hibe_boiler.hibe_boiler.entity;
+package com.hibjava.entity;
 import java.util.Date;
 
 import jakarta.persistence.*;

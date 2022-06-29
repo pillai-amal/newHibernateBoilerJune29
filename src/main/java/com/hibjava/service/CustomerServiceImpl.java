@@ -1,9 +1,9 @@
-package hibe_boiler.hibe_boiler.service;
+package com.hibjava.service;
 
 import java.util.List;
 
-import hibe_boiler.hibe_boiler.DAO.CustomerDAOImpl;
-import hibe_boiler.hibe_boiler.entity.Customer;
+import com.hibjava.DAO.CustomerDAOImpl;
+import com.hibjava.entity.Customer;
 public class CustomerServiceImpl implements CustomerService {
 
 	CustomerDAOImpl impl;

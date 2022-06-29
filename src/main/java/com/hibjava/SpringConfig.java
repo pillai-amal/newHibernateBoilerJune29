@@ -1,4 +1,4 @@
-package hibe_boiler.hibe_boiler;
+package com.hibjava;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;

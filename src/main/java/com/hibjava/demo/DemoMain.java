@@ -1,12 +1,12 @@
-package hibe_boiler.hibe_boiler.demomain;
+package com.hibjava.demo;
 
 import java.util.Date;  
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import hibe_boiler.hibe_boiler.entity.Customer;
-import hibe_boiler.hibe_boiler.service.CustomerServiceImpl;
+import com.hibjava.entity.Customer;
+import com.hibjava.service.CustomerServiceImpl;
 
 public class DemoMain {
 	public static void main(String[] args) {

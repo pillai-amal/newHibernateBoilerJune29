@@ -1,4 +1,4 @@
-package hibe_boiler.hibe_boiler;
+package com.hibjava;
 
 /**
  * Hello world!
