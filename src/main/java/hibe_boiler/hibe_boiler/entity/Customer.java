@@ -7,8 +7,11 @@ import jakarta.persistence.*;
 public class Customer { 
 		@Id
 		private Integer customerId;
+		@Column
 		private String customerName;
+		@Column
 		private LocalDate dateOfBirth;
+		@Column
 		private String address;
 		@Column(name = "phoneNumber")
 		private Long contactNumber;

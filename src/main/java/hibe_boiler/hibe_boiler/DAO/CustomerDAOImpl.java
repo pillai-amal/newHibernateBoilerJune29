@@ -12,7 +12,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public Integer addCustomer(hibe_boiler.hibe_boiler.entity.Customer c) throws Exception {
 		Session session = sessionFactory.getCurrentSession();
 		Customer customer = new Customer();
-		customer.se
 		return null;
 	}
 
